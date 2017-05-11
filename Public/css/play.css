@@ -1,0 +1,16 @@
+
+section {height:800px;width:1000px;margin:48px auto;}
+
+.st {background:url(../img/banner/play1.png);height:160px;margin-bottom:10px;}
+
+.sm {border:1px solid #aaa;width:928px;margin:0 auto;overflow:hidden;padding:2px 36px;}
+.sm ul {margin-bottom:10px;}
+.sm li {list-style:none;height:50px;line-height:50px;}
+.sm span {display:inline-block;width:180px;font-size:18px;}
+.sm select {height:30px;width:200px;margin-left:-4px;font-family:"微软雅黑";color:#666}
+.sm input {height:30px;width:400px;}
+.sm-act {height:152px;line-height:152px;font-size:18px;width:180px;float:left;}
+.sm textarea {float:left;margin-left:0;}
+.sm .sm-sub {clear:both;margin-top:15px;width:100px;height:36px;float:right;font-size:16px;
+		font-family:"微软雅黑";margin-right:6px;background:#0F7AEC;cursor:pointer;color:white;
+		border-radius:6px;border:2px solid #0768CA;margin-bottom:10px;}

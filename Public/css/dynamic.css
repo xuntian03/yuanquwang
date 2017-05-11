@@ -1,0 +1,22 @@
+
+section {width:1000px;margin:48px auto;overflow:hidden;}
+
+.st {background:url(../img/banner/dynamic1.png);width:1000px;height:160px;margin-bottom:10px;}
+
+.sm-nav {}
+.sm ul {border-bottom:1px solid #eee;float:left;background-color:#f8f8f8;margin-bottom:10px;}
+.sm ul li {list-style:none;float:left;width:333px;text-align:center;font-size:20px;
+		height:40px;line-height:40px;}
+#coll {border-top:3px solid red;}
+
+.sm-con {clear:both;margin:10px auto;width:808px;display:none;}
+#sm-coll {display:block;}
+.sm span {font-style:italic;}
+.sm-con-1 {overflow:hidden;margin-top:10px;}
+.sm .con-coll {float:left;}
+.sm .con-time {float:right;margin-right:5px;}
+.sm-con-2 {clear:both;overflow:hidden;margin:8px 0;}
+.sm .con-title {float:left;}
+.sm .con-riqi {float:left;margin-left:20px;}
+.sm .con-zan {float:right;margin-right:5px;}
+.sm-con-3 {clear:both;overflow:hidden;border-bottom:1px solid #ccc;padding-bottom:8px;}

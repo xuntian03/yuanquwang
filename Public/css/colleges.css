@@ -1,0 +1,24 @@
+
+section {width:1000px;margin:48px auto;overflow:hidden;}
+
+.st {background:url(../img/banner/college1.png);width:1000px;height:160px;margin-bottom:10px;}
+.st select {height:30px;margin:35px 0 0 35px;color:white;border:none;background:#0768CA;}
+
+.sm-nav ul {float:left;list-style:none;margin-bottom:5px;background-color:#0768CA;color:white;}
+.sm-nav li {float:left;width:500px;height:40px;line-height:40px;text-align:center;
+		font-size:24px;}
+.sm-news ul {clear:both;list-style:none;width:496px;float:left;}
+.sm-news li {height:30px;line-height:30px;width:490px;overflow:hidden;border-right:1px solid #ccc;}
+.sm-act ul {list-style:none;width:500px;float:right;}
+.sm-act li {height:30px;line-height:30px;width:500px;overflow:hidden;}
+
+.sm-shou ul {float:left;list-style:none;margin-bottom:5px;background-color:#0768CA;color:white;}
+.sm-shou li {float:left;width:500px;height:40px;line-height:40px;text-align:center;
+		font-size:24px;}
+.sm-work ul {clear:both;list-style:none;width:496px;float:left;}
+.sm-work li {height:30px;line-height:30px;width:490px;overflow:hidden;border-right:1px solid #ccc;}
+.sm-soci ul {list-style:none;width:500px;float:right;}
+.sm-soci li {height:30px;line-height:30px;width:500px;overflow:hidden;}
+
+.sm a {color:#666;}
+.sm a:hover{color:red;}

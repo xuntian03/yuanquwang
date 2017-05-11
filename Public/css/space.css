@@ -1,0 +1,49 @@
+
+ul {list-style:none;}
+section {width:1000px;margin:48px auto;overflow:hidden}
+#p-same {text-align:left;background:#f0f5f6;height:30px;line-height:30px;color:#006699;
+		font-weight:bold;font-size:14px;}
+
+.st {background:url(../img/banner/space1.png);height:160px;margin-bottom:10px;}
+.st-post {float:right;margin:10px 10px 0 0;}
+.agree,.ignore {margin-left:10px;}
+
+.sl {float:left;width:230px;}
+.sl-img {border:1px solid #ddd;width:230px;text-align:center;padding-bottom:15px;}
+.sl-img img {margin-top:15px;}
+.sl-img-user {text-align:center;}
+#dele-fri {margin-left:110px;}
+
+.sm {float:left;width:510px;margin-left:12px;margin-bottom:20px;}
+.sm-info {border:1px solid #ddd;width:510px;}
+.sm-info li {margin:12px 0;}
+.sm-info span {display:inline-block;width:120px;}
+.sm-info-edit {text-align:right;background:none;border-top:1px dotted #666}
+
+.sm-act {border:1px solid #ddd;width:510px;margin-top:4px;font-size:12px;}
+.sm-act-all {border-bottom:1px dotted #666;width:510px;margin-bottom:6px;padding-bottom:6px;}
+.sm-act p {margin:5px 0 0;padding-left:8px;}
+.act-time {background:#eee;color:#0768CA;height:26px;line-height:26px;}
+.sm-act span {font-style:italic;margin-left:8px;}
+.sm #p-same a {margin-left:380px;}
+
+.sm-cre {border:1px solid #ddd;width:510px;margin-top:4px;font-size:12px;}
+.sm-cre-all {border-bottom:1px dotted #666;width:510px;margin-bottom:6px;padding-bottom:6px;}
+.sm-cre p {margin:5px 0 0;padding-left:8px;}
+.cre-time {background:#eee;color:#0768CA;height:26px;line-height:26px;}
+.sm-cre span {font-style:italic;margin-left:8px;}
+
+.sm-mes {border:1px solid #ddd;width:510px;margin-top:10px;}
+.sm-mes-write {margin:10px 0;}
+.sm-mess-time {background:#eee;height:30px;line-height:30px;color:#0768CA;}
+.sm-mess-sender {border-bottom:1px dotted grey;height:30px;line-height:30px;display:inline;}
+.sm-mess-cons {margin:10px 0;}
+.sub-mess {background:#0768CA;border-style:none;width:50px;height:26px;margin-top:20px;
+		font-size:14px;font-weight:bold;color:white;margin:10px 0 20px 457px;}
+
+.sr {float:right;width:230px;}
+.sr-fri {border:1px solid #ddd;width:230px;padding-bottom:15px;}
+.sr-fri-list {width:50px;text-align:center;margin-left:20px;margin-top:15px;float:left;}
+.sr-fri-list .d-img {height:50px;width:50px;overflow:hidden;}
+.sr-fri-list img {height:50px;}
+#aa {clear:both;}

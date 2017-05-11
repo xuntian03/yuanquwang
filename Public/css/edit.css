@@ -1,0 +1,22 @@
+
+ul {list-style:none;}
+section {width:1000px;margin:48px auto;height:600px;}
+
+.st {background:url(../img/banner/space_e.png);width:1000px;height:160px;margin:0 auto 10px;}
+
+.tab {margin:0 auto;width:480px;}
+.tab li {float:left;background:#eee;width:240px;height:36px;line-height:36px;text-align:center;
+		font-size:16px;font-weight:bold;}
+#edit {border-top:3px solid red;}
+
+.sm {border:1px solid #ddd;width:480px;margin:50px auto;padding-bottom:20px;}
+
+.sm li {height:30px;line-height:30px;margin-top:20px;}
+.sm ul span {width:100px;margin:0 60px 0 60px;text-align:right;display:inline-block;}
+.sm ul input {height:30px;width:180px;font-family:"微软雅黑";color:#666;}
+.sm .sub {margin-left:312px;width:90px;cursor:pointer;border:2px solid #0768CA;
+		background:#0F7AEC;border-radius:4px;color:white;}
+
+.sm-icon {display:none;text-align:center;padding:20px;}
+.sm-icon input {margin-top:30px;height:30px;width:280px;}
+#sub-i {margin-left:190px;}

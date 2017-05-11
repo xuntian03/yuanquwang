@@ -1,0 +1,39 @@
+
+section {width:1000px;margin:48px auto 48px;position:relative;}
+h3 {margin:10px 0;text-align:left;}
+
+.st {background:url(../img/banner/content1.png);height:160px;margin-bottom:10px;}
+
+.sl {width:700px;margin-bottom:60px;}
+.sl div {border:1px solid #aaa;width:700px;margin-bottom:20px;line-height:40px;}
+.sl-span {background:#0768CA;width:120px;margin-right:20px;display:inline-block;float:left;
+	font-size:18px;font-weight:bold;font-family:"幼圆";color:white;text-align:center;}
+.sl p {margin-left:20px;}
+
+
+.sm {width:700px;}
+.sm-nav {background:#eee;height:80px;line-height:40px;margin-bottom:10px;
+		background-image:url("/web/yiqi/Public/img/cons-sm-nav.jpg");}
+.sm-mess {border-bottom:1px solid #ccc;width:700px;margin-bottom:10px;}
+.sm-mess p {padding-left:6px;}
+.sm-mess-time {background:#eee;height:30px;line-height:30px;color:#0768CA;}
+.sm-mess-user {border-bottom:1px dotted grey;height:30px;line-height:30px;display:inline;}
+.sm-mess-cons {margin:10px 0;}
+.sm-write {margin-top:20px;;width:700px;}
+.sm-write textarea {width:100%;}
+.sub-mess {background:#0F7AEC;border:2px solid #0768CA;width:120px;height:30px;border-radius:4px;
+		font-size:16px;font-family:"微软雅黑";color:white;margin:20px 0 50px 580px;cursor:pointer;}
+
+.sr {border:1px solid white;width:280px;position:absolute;right:0;top:169px;}
+.sr-top {border:1px solid #ccc;width:280px;margin-bottom:20px;}
+.sr-top-mebs {background:#eee;width:60px;display:inline-block;text-align:center;
+			margin-bottom:10px;margin-right:6px;}
+.sr-vote p {float:left;width:180px;height:56px;line-height:56px;color:#0768CA;font-size:18px;}
+.sr-vote img {float:right;margin-bottom:20px;}
+.sr-img {clear:both;border-top:1px solid #ccc;width:280px;text-align:center;}
+strong {color:red;font-style:italic;}
+input {height:26px;color:red;font-family:"微软雅黑";width:280px;}
+.sub {width:80px;margin:15px 0 15px 200px;border:1px solid #aaa;}
+.sr-note {border-top:1px solid #ccc;}
+.sr-note p {margin-top:6px;}
+
