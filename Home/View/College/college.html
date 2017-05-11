@@ -1,0 +1,84 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/college.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/college.js"></script>
+</head>
+<title>园趣网 -- 园趣校园</title>
+<body>
+
+<!-- 标题栏 -->
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		<p class="st-active"></p>
+		<select name="region" id="sel_coll">
+			<option value="all_coll">选择感兴趣的学校</option>
+		</select>
+	</div>
+	<div class="sm">
+	<!-- 选择具体学校后的首页 -->
+		{foreach $tab as $v}
+		<div class="sm-nav">
+			<ul class="sl-nav-tab" id="sl-nav-tab">			
+				<li>学校热点新闻</li>
+				<li>学校相关活动</li>					
+			</ul>
+		</div>
+		{/foreach}
+		<!-- 每个学校的热点新闻 -->
+		<div class="sm-news">
+			<ul class="">
+				{foreach $news as $v}
+				<li id=''><a href='{$smarty.const.__CONTROLLER__}/collNews?id={$v.hot_id}'>
+				{$v.hot_title}</a></li>	
+				{/foreach}
+			</ul>					
+		</div>
+		<!-- 每个学校的所有活动 -->
+		<div class="sm-act">
+			<ul class="">
+				{foreach $act as $v}
+				<li id=''><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}'>
+				{$v.title}</a></li>	
+				{/foreach}
+			</ul>	
+		</div>
+
+	<!-- 园趣校园的首页 -->
+		{foreach $shou as $v}
+		<div class="sm-shou">
+			<ul class="sl-nav-tab" id="sl-nav-tab">				
+				<li>校园招聘宣讲</li>
+				<li>社会热点新闻</li>					
+			</ul>
+		</div>
+		{/foreach}
+		<!-- 校园宣讲会 -->
+		<div class="sm-work">
+			<ul class="">
+				{foreach $work as $v}
+				<li id=''><a href='{$smarty.const.__CONTROLLER__}/collWork?id={$v.work_id}'>
+				{$v.work_title}</a></li>	
+				{/foreach}
+			</ul>				
+		</div>
+		<!-- 社会热点新闻 -->
+		<div class="sm-soci">
+			<ul class="">
+				{foreach $soci as $v}
+				<li id=''><a href='{$smarty.const.__CONTROLLER__}/collSoci?id={$v.soci_id}'>
+				{$v.soci_title}</a></li>	
+				{/foreach}
+			</ul>				
+		</div>
+	</div>
+
+</section>
+
+
+</body>
+</html>

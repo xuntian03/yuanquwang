@@ -1,0 +1,60 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/edit.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/edit.js"></script>
+</head>
+<title>我的空间 -- 编辑资料</title>
+
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		
+	</div>
+	<div class="tab">
+		<ul>
+			<li id="edit"><a href='javascript:void(0)'>资料编辑</a></li>
+			<li id="icon"><a href='javascript:void(0)'>头像上传</a></li>
+		</ul>
+	</div>
+
+	<div class="sm">
+		<div class="sm-edit">
+			<form action="{$smarty.const.__SELF__}" method="post">
+			<ul>
+				{foreach $info as $user}
+				<li><span>性　别：</span><input type="text" name="gender" value="{$user.gender}"></li>
+				<li><span>出生年月：</span><input type="text" name="birth" value="{$user.birth}"></li>
+				<li><span>所在院校：</span><input type="text" name="college" value="{$user.college}"></li>
+				<li><span>所属年级：</span><input type="text" name="grade" value="{$user.grade}"></li>
+				<li><span>家　乡：</span><input type="text" name="home" value="{$user.home}"></li>
+				<li><input type="submit" name="sub-e" class="sub" value="确定修改"></li>
+				{/foreach}
+			</ul>			
+			</form>
+		</div>
+		<div class="sm-icon">
+
+		<!-- <img src="{$smarty.const.SITE_URL}/Public/img/aa.jpg" width="200"> -->
+			{foreach $info as $user}
+			<img src="{$smarty.const.SITE_URL}/{$user.favicon}" width="200">
+			{/foreach}
+
+			<form enctype="multipart/form-data" method="POST" target="upload_target">
+				<input type="file" name="dir" class="dir">			
+				<iframe name="upload_target" style="display:none"></iframe>
+				<input type="submit" name="sub-i" class="sub" id="sub-i" value="确定上传">	
+			</form>	
+								
+		</div>
+	</div>	
+	
+</section>
+
+</body>
+</html>

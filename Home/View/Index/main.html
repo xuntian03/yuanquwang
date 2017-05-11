@@ -1,0 +1,251 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/main.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/index.js"></script>
+</head>
+<title>园趣网 --> 一起吧</title>
+<body>
+
+<!-- 引入标题栏 -->
+{include file='../../Common/header.tpl'}
+
+<!-- 显示消息提示 -->
+<div id="float">
+	{foreach $show_num as $v}
+	<div id="float-info">
+		{$v}
+	</div>
+	<div id="float-show">
+		您空间有{$v}条消息，<a href="{$smarty.const.__MODULE__}/Space/space">前往处理</a>
+	</div>
+	{/foreach}
+</div>
+
+<!-- 主题内容部分 -->
+<section>
+	<!-- 顶部banner -->
+	<div class="st">
+		<div class="st-logo">
+		{foreach $page as $v}
+			{$v}
+		{/foreach}
+		</div>
+	</div>
+
+	<!-- 热门区域 -->	
+	<div class="sh">
+		<img src="{$smarty.const.IMG_URL}/hold/hot1.jpg">
+		{foreach $info1 as $v}
+		<span class="sh-span1">
+		<a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target='__blank'> {$v.title}</a></span>
+		{/foreach}
+		{foreach $info2 as $v}
+		<span class="sh-span2">
+		<a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}" target="__blank">
+		{$v.title}</a></span>
+		{/foreach}
+		{foreach $info3 as $v}
+		<span class="sh-span3">
+		<a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}" target="__blank">
+		{$v.title}</a></span>
+		{/foreach}
+	</div>
+
+	<!-- 左侧内容 -->
+	<div class="sl">
+		<!-- 图片滚动 -->
+		<div class="sl-pic">
+			<div class="sl-pic-title">
+				<a href="javascript:void(0);" style="color:#fff">1</a>
+				<a href="javascript:void(0);">2</a>
+				<a href="javascript:void(0);">3</a>
+				<a href="javascript:void(0);">4</a>
+				<a href="javascript:void(0);">5</a>
+				<div class="float"></div>
+			</div>
+			<div class="sl-pic-img">
+				<img class="pic1" src="{$smarty.const.IMG_URL}/hot/hot_pic1.JPG" style="left:0">
+				<img src="{$smarty.const.IMG_URL}/hot/hot_pic2.JPG">
+				<img src="{$smarty.const.IMG_URL}/hot/hot_pic3.JPG">
+				<img src="{$smarty.const.IMG_URL}/hot/hot_pic4.JPG">
+				<img src="{$smarty.const.IMG_URL}/hot/hot_pic5.JPG">
+			</div>
+			<div class="leftB">&lt;</div>
+			<div class="rightB">&gt;</div>
+		</div>
+		
+		<!-- 活动分类导航栏 -->
+		<div class="sl-nav">
+			<ul class="sl-nav-tab" id="sl-nav-tab">
+				<li class="yaowen" id='trip'><a href='javascript:void(0)'>结伴出游</a></li>
+				<li id='food'><a href='javascript:void(0)'>尝遍美食</a></li>
+				<li id='movie'><a href='javascript:void(0)'>电影展览</a></li>	
+				<li id='house'><a href='javascript:void(0)'>一起租房</a></li>	
+				<li id='study'><a href='javascript:void(0)'>考试考证</a></li>	
+				<li id='other'><a href='javascript:void(0)'>相约其它</a></li>		
+			</ul>
+		</div>
+
+		<!-- 辅助div -->
+		<div class="slall">
+		<!-- list1 结伴出游 -->
+		<div id="title_trip" class="sl-list">
+			{foreach $trip_info as $v}
+			<div class="sl-list-con">			
+					<p><b>r&nbsp;=</b><a href='{$smarty.const.__MODULE__}
+					/Content/content?id={$v.id}'>{$v.title}</a></p>				
+					<p id="region"><a href='{$smarty.const.__MODULE__}/College/college' target="__blank"><b>O&nbsp;=</b>{$v.region}</a></p>
+					<span>{$v.riqi}</span>
+					<a href="javascript:void(0)">
+						<input type="hidden" id="lists_id" value='{$v.id}' />
+						<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+						<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+					</a>				
+				</div>
+			{/foreach}
+			<!-- 显示分页栏 -->
+			{foreach $trip_page as $v}
+				{$v}
+			{/foreach}			
+		</div>
+		<!-- list2 尝遍美食 -->
+		<div id="title_food" class="sl-list">
+			{foreach $food as $v}
+			<div class="sl-list-con">			
+				<p class="h3"><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target="__blank">{$v.title}</a></p>
+				<span>{$v.riqi}</span>
+				<a href="javascript:void(0)">
+					<input type="hidden" id="lists_id" value='{$v.id}' />
+					<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+					<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+				</a>				
+			</div>
+			{/foreach}
+		</div>
+		<!-- list3 电影展览 -->
+		<div id="title_movie" class="sl-list">
+			{foreach $movie as $v}
+			<div class="sl-list-con">			
+				<p class="h3"><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target="__blank">{$v.title}</a></p>
+				<span>{$v.riqi}</span>
+				<a href="javascript:void(0)">
+					<input type="hidden" id="lists_id" value='{$v.id}' />
+					<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+					<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+				</a>				
+			</div>
+			{/foreach}
+		</div>
+		<!-- list4 一起租房 -->
+		<div id="title_house" class="sl-list">
+			{foreach $house as $v}
+			<div class="sl-list-con">			
+				<p class="h3"><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target="__blank">{$v.title}</a></p>
+				<span>{$v.riqi}</span>
+				<a href="javascript:void(0)">
+					<input type="hidden" id="lists_id" value='{$v.id}' />
+					<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+					<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+				</a>				
+			</div>
+			{/foreach}
+		</div>
+		<!-- list5 考试考证 -->
+		<div id="title_study" class="sl-list">
+			{foreach $study as $v}
+			<div class="sl-list-con">			
+				<p class="h3"><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target="__blank">{$v.title}</a></p>
+				<span>{$v.riqi}</span>
+				<a href="javascript:void(0)">
+					<input type="hidden" id="lists_id" value='{$v.id}' />
+					<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+					<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+				</a>				
+			</div>
+			{/foreach}
+		</div>
+		<!-- list6 相约其它 -->
+		<div id="title_other" class="sl-list">
+			{foreach $other as $v}
+			<div class="sl-list-con">			
+				<p class="h3"><a href='{$smarty.const.__MODULE__}/Content/content?id={$v.id}' target="__blank">{$v.title}</a></p>
+				<span>{$v.riqi}</span>
+				<a href="javascript:void(0)">
+					<input type="hidden" id="lists_id" value='{$v.id}' />
+					<span id="lists_zan" name="lists_zan">{$v.dianzan}</span>
+					<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+				</a>				
+			</div>
+			{/foreach}
+		</div>
+		</div>
+	</div>
+
+	<!-- 右侧内容 -->
+	<div class="sr">
+		<!-- logo和大学下拉框 -->
+		<div class="sr-logo">
+			<select name="region" id="sel_coll">
+				<option value="all_coll">选择感兴趣的学校</option>
+			</select>
+		</div>
+
+		<!-- 积分排名 -->
+		<div class="sr-order" id="one">
+			<div class="sr-order-all">
+				<h3>全网排名</h3>
+				<table>
+					<tr class="tr0"><td colspan="3">排名</td><td>用户</td><td>积分</td></tr>
+					{foreach item=v1 key=v2 from=$paixu_a1}
+					<tr><td></td><td id="xuhao1">{$v2+1}<td></td></td>
+					<td><a href="{$smarty.const.__MODULE__}/Space/space?spacename={$v1.username}">
+					{$v1.username}</a></td><td>{$v1.jifen}</td></tr>
+					{/foreach}
+					{foreach item=v1 key=v2 from=$paixu_a2}
+					<tr><td></td><td id="xuhao2">{$v2+4}<td></td></td>
+					<td><a href="{$smarty.const.__MODULE__}/Space/space?spacename={$v1.username}">
+					{$v1.username}</a></td><td>{$v1.jifen}</td></tr>
+					{/foreach}
+				</table>
+			</div>
+			<div class="sr-order-my">
+				{foreach $goals as $vg}
+				<h3>我的排名</h3>
+				<p>我的积分<strong>{$vg.jifen}</strong></p>
+				{/foreach}
+				{foreach item=vp from=$mingci}
+				<p>积分排名<strong>{$vp}</strong></p>
+				{/foreach}
+				<h3 class="scan">最近浏览</h3>
+				{foreach $scan_id as $vs}
+				<p id="scan"><a href="{$smarty.const.__MODULE__}/Content/content?id={$vs.id}">
+				{$vs.title|truncate:11:"..."}</a></p>
+				{/foreach}
+			</div>
+		</div>
+
+		<!-- 测试游戏 -->
+		<div class="sr-test">
+			<p>一个人不知道干<b>什么&nbsp;？</b>那就<b>测测吧！</b></p>
+			<input type="text" id="test-cons" placeholder="输入任意字符，最多测试三次">
+			<input type="submit" value="测测吧" id="test-sub">
+		</div>
+	</div>
+
+<!--PC版 畅言评论-->
+	<div id="SOHUCS" sid="请将此处替换为配置SourceID的语句"></div>
+	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+	<script type="text/javascript">
+		window.changyan.api.config({
+		appid: 'cysYfCvpy',
+		conf: 'prod_efd3bcf193006c42e77d368fc3be563a'
+		});
+	</script>
+</section>
+
+
+</body>
+</html>

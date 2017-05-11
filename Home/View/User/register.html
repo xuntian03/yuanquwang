@@ -1,0 +1,85 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/register.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/user.js"></script>
+</head>
+<title>欢迎注册园趣网</title>
+<body>
+<section>
+	<div class="s-title">
+		<p class="s-title-name">园趣网</p>
+		<p class="s-title-info">缘来，一起吧~</p>
+	</div>
+	<div class="s-user">
+		<form action="{$smarty.const.__SELF__}" method="post">
+		<ul>
+			<li>
+				<span>用户名</span>
+				<input type="text" name="username" id="reg_name" placeholder="字母、数字、下划线">
+			</li>
+			<li>
+				<span>性　别</span>
+				<select name="gender" id="gender">
+					<option value="">请选择性别</option>
+					<option value="男">男生</option>
+					<option value="女">女生</option>
+				</select>
+			</li>
+			<li>
+				<span class="pre">出生年份</span>
+				<select name="birth" id="sel_year">
+					<option value="">请选择年份</option>
+				</select>
+			</li>
+			<li>
+				<span>学　校</span>
+				<select name="college" id="sel_coll">
+					<option value="sel">请选择大学</option>
+				</select>
+			</li>
+			<li>
+				<span>密　码</span>
+				<input type="password" name="password" placeholder="至少六位">
+			</li>
+			<li>
+				<span class="pre">确认密码</span>
+				<input type="password" name="repwd" placeholder="请确认密码">
+			</li>
+			<li>
+				<span>验证码</span>
+				<input type="text" name="verify" id="ver_col" placeholder="请输入验证码">
+			</li>
+			<li>
+				<span class="s-user-verify"><img src="{$smarty.const.__CONTROLLER__}/verifyImg" id="veri"/></span>
+				<a href="javascript:void(0)"><img src="/web/yiqi/Public/img/shuaxin.jpg" id="shuaxin" /></a>
+			</li>
+			<li>
+				<input type="submit" value="注　册" class="s-user-login">
+			</li>
+		</ul>
+		</form>
+	
+		<!-- 显示提示信息 -->
+		<ul class="s-uer-tishi">
+			<li>{$errorInfo.username}</li>
+			<li>{$errorInfo.gender}</li>
+			<li>{$errorInfo.birth}</li>
+			<li>{$errorInfo.college}</li>
+			<li>{$errorInfo.password}</li>
+			<li>{$errorInfo.repwd}</li>
+			<li>{$errorInfo.verify}</li>
+		</ul>
+	</div>
+
+</section>
+<footer>
+	<span>©2017 Yiqilai</span><a href="javascript:void(0)">使用前必读</a>
+	<a href="http://www.miibeian.gov.cn">京ICP证100000号</a>
+	<a href="javascript:void(0)">京公网安备10000000000000</a>	
+</footer>
+
+</body>
+</html>

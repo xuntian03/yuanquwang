@@ -1,0 +1,92 @@
+<!Doctype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/dynamic.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/dynamic.js"></script>
+</head>
+<title>园趣网 -- 关注动态</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		<p class="st-active"></p>
+	</div>
+	<div class="sm">
+		<!-- 活动分类导航栏 -->
+		<div class="sm-nav">
+			<ul class="sl-nav-tab" id="sl-nav-tab">
+				<li id='coll'><a href='javascript:void(0)'>校园发起的活动</a></li>
+				<li id='act'><a href='javascript:void(0)'>好友参加的活动</a></li>
+				<li id='cre'><a href='javascript:void(0)'>好友发起的活动</a></li>			
+			</ul>
+		</div>
+
+		<!-- 辅助的div -->
+		<div class="slall">
+		<!-- 校园发起的活动 -->		
+		<div class="sm-con" id="sm-coll">
+			{foreach $coll as $v}
+			<div class="sm-con-1">
+				<p class="con-coll">{$v.college}</p>
+				<p class="con-time"><span>{$v.shijian}</span></p>
+			</div>
+			<div class="sm-con-2">
+				<p class="con-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}">
+				{$v.title}</a></p>
+				<p class="con-riqi"><span>{$v.riqi}</span></p>	
+				<p class="con-zan">获得赞数&nbsp;<span>{$v.dianzan}</span></p>
+			</div>
+			<div class="sm-con-3">
+				<p class="con-con">{$v.content}</p>
+			</div>
+			{/foreach}
+		</div>
+		<!-- 好友参加的活动	 -->	
+		<div class="sm-con">
+			{foreach $act as $v}
+			<div class="sm-con-1">
+				<p class="con-coll">{$v.fri_user}参加</p>
+				<p class="con-time"><span>{$v.ac_time}</span></p>
+			</div>
+			<div class="sm-con-2">
+				<p class="con-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}">
+				{$v.title}</a></p>
+				<p class="con-riqi"><span>{$v.riqi}</span></p>	
+				<p class="con-zan">获得赞数&nbsp;<span>{$v.dianzan}</span></p>
+			</div>
+			<div class="sm-con-3">
+				<p class="con-con">{$v.content}</p>
+			</div>
+			{/foreach}
+		</div>
+		<!-- 好友发起的活动 -->	
+		<div class="sm-con">
+			{foreach $cre as $v}
+			<div class="sm-con-1">
+				<p class="con-coll">{$v.founder}发起</p>
+				<p class="con-time"><span>{$v.shijian}</span></p>
+			</div>
+			<div class="sm-con-2">
+				<p class="con-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}">
+				{$v.title}</a></p>
+				<p class="con-riqi"><span>{$v.riqi}</span></p>	
+				<p class="con-zan">获得赞数&nbsp;<span>{$v.dianzan}</span></p>
+			</div>
+			<div class="sm-con-3">
+				<p class="con-con">{$v.content}</p>
+			</div>
+			{/foreach}
+		</div>
+
+
+		</div>
+	</div>
+		
+	
+</section>
+</body>
+</html>

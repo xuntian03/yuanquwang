@@ -1,0 +1,33 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/active.css"></style>
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/active.js"></script>
+</head>
+{foreach $info as $v}
+<title>{$v.ac_user}的空间 -- 参加活动</title>
+{/foreach}
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		<p class="st-active">{$v.ac_user}</p>
+	</div>
+	{foreach $info as $v}
+	<div class="sm">
+		<p class="sm-time">参加时间<span>({$v.ac_time})</span></p>
+		<p class="sm-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.ac_cate}">
+		{$v.title}</a></p>
+		<p class="sm-zan">获得赞数<span>{$v.dianzan}</span></p>		
+		<p class="sm-con">{$v.content|truncate:60:"..."}</p>
+	</div>			
+	{/foreach}
+
+</section>
+
+</body>
+</html>

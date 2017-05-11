@@ -1,0 +1,50 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/login.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/user.js"></script>
+</head>
+<title>欢迎登录园趣网</title>
+
+<body>
+
+<header>	
+	<a href="{$smarty.const.__CONTROLLER__}/register">注&nbsp;册</a>
+	<a href="{$smarty.const.__MODULE__}/Index/index">游&nbsp;客</a>
+</header>
+
+<section>
+	<div class="s-title">
+		<p class="s-title-name">园趣网</p>
+		<p class="s-title-info">校园为圆心，兴趣为半径</p>
+	</div>
+	<div class="s-user">
+		<form action="{$smarty.const.__SELF__}" method="post">
+		<ul>
+			{foreach $save_name as $v}
+			<li><span>用户名</span><input type="text" name="username" id="name" 
+				placeholder="字母、数字、下划线" value="{$v}"></li>
+			{/foreach}
+			<li><span>密　码</span><input type="password" name="password" placeholder="不少于六位"></li>
+			<li><span>验证码</span><input type="text" name="verify" value="{$ver_err}" id="ver_col" 
+			placeholder="请输入验证码"></li>
+			<li><span class="s-user-verify"><img src="{$smarty.const.__CONTROLLER__}/verifyImg" id="veri"/>
+			</span><a href="javascript:void(0)"><img src="/web/yiqi/Public/img/shuaxin.jpg" id="shuaxin" /></a></li>
+			<li><span class="s-user-box">是否保存用户名？</span>
+				<input type="checkbox" id="box" name="box"></li>
+			<li><input type="submit" value="登　录" class="s-user-login"></li>
+		</ul>
+		</form>	
+	</div>
+</section>
+
+<footer>
+	<span>©2017 YuanQu</span><a href="javascript:void(0)">使用前必读</a>
+	<a href="http://www.miibeian.gov.cn">京ICP证100000号</a>
+	<a href="javascript:void(0)">京公网安备10000000000000</a>	
+</footer>
+
+</body>
+</html>

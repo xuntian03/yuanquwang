@@ -1,0 +1,102 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/content.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/content.js"></script>
+</head>
+{foreach $cons as $v}
+<title>{$v.title}</title>
+{/foreach}
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		
+	</div>
+	<div class="sl">
+		{foreach $cons as $v}
+		<div >
+			<span class='sl-span'>发布时间</span><span>{$v.shijian}</span>
+		</div>
+		<div >
+			<span class='sl-span'>活动名称</span><span>{$v.title}</span>
+		</div>
+		<div >
+			<span class='sl-span'>活动日期</span><span>{$v.riqi}</span>
+		</div>
+		<div >
+			<span class='sl-span'>参与人数</span><span>{$v.dianzan}</span>
+		</div>
+		<div >
+			<span class='sl-span'>活动简介</span><p>{$v.content}</p>
+		</div>
+		<input type="hidden" value="{$v.id}" id="mess-id">
+		{/foreach}
+	</div>
+
+	<div class="sm">	
+		<div class="sm-nav">
+			<span></span>
+		</div>
+		{foreach $mess as $v}
+		<div class="sm-mess">
+			<p class="sm-mess-time">发表于　{$v.mes_time}</p>
+			<a href="{$smarty.const.__MODULE__}/Space/space?spaceame={$v.mes_user}">
+			<p class="sm-mess-user">留言者　{$v.mes_user}</p></a>
+			<p class="sm-mess-cons">{$v.mes_cons}</p>
+		</div>
+		{/foreach}
+		<div class="sm-new">
+		</div>
+		<div class="sm-write">
+			<textarea cols="84" rows="9" id="mess" class="textarea"></textarea>
+			<a href="javascript:void(0)">
+			<input type="button" value="发表留言" id="sub-mess" class="sub-mess"></a>		
+		</div>
+	</div>
+
+	<div class="sr">
+		<div class="sr-top">
+			<h3>参与活动人员</h3>
+			{foreach $mebs as $meb}
+			<a href="{$smarty.const.__MODULE__}/Space/space?spacename={$meb.ac_user}">
+			<span class="sr-top-mebs">{$meb.ac_user}</span></a>
+			{/foreach}
+		</div>
+		<div class="sr-vote">
+			{foreach $cons as $v}
+			<p>“{$v.region}”</p>
+			<a href="{$smarty.const.__SELF__}">
+				<input type="hidden" id="lists_id" value='{$v.id}' />
+				<input type="hidden" id="lists_zan" name="lists_zan" value='{$v.dianzan}' />
+				<img id='vote_ok' src="/web/yiqi/Public/img/hold/sl-list-hand.png" />
+			</a>
+			{/foreach}
+		</div>
+		<div class="sr-img">
+			<h3>显示微信二维码</h3>			
+			{foreach $imgs as $big}
+			<img src="{$smarty.const.SITE_URL}/{$big.sao_dir}" width="200" alt="二维码图片" id="img-new">	
+			<h3>上传者：<strong>{$big.sao_user}</strong></h3>
+			{/foreach}
+			<form enctype="multipart/form-data" method="POST">
+				<input type="file" name="dir" class="dir">
+				<input type="submit" name="sub" class="sub" value="确定上传">
+			</form>
+		</div>
+		<div class="sr-note">
+			<p><strong>Notice:</strong></p>
+			<p>1、创建一个微信群</p>
+			<p>2、将二维码上传</p>
+			<p>3、一起讨论活动细节</p>
+		</div>
+	</div>
+
+</section>
+
+</body>
+</html>

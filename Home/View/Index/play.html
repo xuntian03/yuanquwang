@@ -1,0 +1,50 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/play.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/user.js"></script>
+</head>
+<title>园趣网 -- 发起活动</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		
+	</div>
+	<div class="sm">
+		<form action="{$smarty.const.__SELF__}" method="post">
+		<ul>
+			<li><span>发起用户：</span><span>{$smarty.session.username}</span></li>
+			<li><span>活动分类：</span>
+				<select name="cate" id="cate">
+					<option value="trip">结伴出游</option>
+					<option value="food">尝遍美食</option>
+					<option value="movie">电影展览</option>
+					<option value="house">一起租房</option>
+					<option value="study">考试考证</option>
+					<option value="other">相约其它</option>
+				</select>
+			</li>
+			<li><span>面向区域：</span>
+				<select name="region" id="sel_coll">
+					<option value="all_coll">所有大学</option>
+				</select>
+			</li>
+			<li><span>活动日期：</span><input type="text" name="riqi" 
+				placeholder="例如：3月18日 星期六"></li>
+			<li><span>活动标题：</span><input type="text" name="title"></li>
+		</ul>
+			<p class="sm-act">活动简介：</p>
+			<div class="sm-area">
+			<textarea cols="89" rows="10" id="mess" class="textarea" name="content"></textarea>
+			</div>
+			<input type="submit" value="发　布" class="sm-sub">
+		</form>
+	</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/create.css"></style>
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/active.js"></script>
+</head>
+{foreach $info as $v}
+<title>{$v.founder}的空间 -- 发起活动</title>
+{/foreach}
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		<p class="st-create">{$v.founder}</p>
+	</div>
+	{foreach $info as $v}
+	<div class="sm">
+		<p class="sm-time">发起时间<span>({$v.shijian})</span></p>
+		<p class="sm-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.id}">
+		{$v.title}</a></p>
+		<p class="sm-zan">获得赞数<span>{$v.dianzan}</span></p>		
+		<p class="sm-con">{$v.content|truncate:60:"..."}</p>
+	</div>		
+	{/foreach}
+
+</section>
+
+</body>
+</html>

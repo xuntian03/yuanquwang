@@ -1,0 +1,127 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/space.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/space.js"></script>
+</head>
+{foreach $info as $user}
+<title>园趣网 -- {$user.username}的空间</title>
+{/foreach}
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		
+		<!-- 显示添加好友请求的消息 -->
+		<div class="st-post">
+			{foreach $fris as $fri}
+			<p>
+			<span class="agr-post">{$fri.fri_post}</span><span>请求加你为好友</span>
+			<span class="agree"><a href="javascript:void(0)">同意</a></span>
+			<span class="ignore"><a href="javascript:void(0)">忽略</a></span>
+			</p>
+			{/foreach}
+		</div>
+	</div>
+ 	<div class="sl">
+		<div class="sl-img">
+			<p id="p-same">头像</p>
+			{foreach $info as $user}
+			<img src="{$smarty.const.SITE_URL}/{$user.favicon}" width="120" alt="头像">
+			<p class="sl-img-user" id="fri-user">{$user.username}</p>
+			{/foreach}
+			<a href="{$smarty.const.__CONTROLLER__}/edit"><span class="sl-img-user">编辑头像</span></a>
+		</div>
+		<div class="sl-make">
+			<span id="make-fri"><a href="javascript:void(0)">加为好友</a></span>
+			{foreach $state as $v}
+			<span id="dele-fri"><a href="javascript:void(0)">{$v.fri_state}</a></span>
+			{/foreach}
+		</div>
+	</div> 
+	<div class="sm">
+		<div class="sm-info">
+			<p id="p-same">个人资料</p>
+			<ul>
+				{foreach $info as $user}
+				<li><span>性别：</span><span>{$user.gender}</span></li>
+				<li><span>出生年月：</span><span>{$user.birth}</span></li>
+				<li><span>所在院校：</span><span>{$user.college}</span></li>
+				<li><span>所属年级：</span><span>{$user.grade}</span></li>
+				<li><span>家乡：</span><span>{$user.home}</span></li>
+				{/foreach}
+			</ul>
+			<a href="{$smarty.const.__CONTROLLER__}/edit"><p class="sm-info-edit">完善/编辑资料</p></a>
+		</div>
+
+		<!-- 我参加过的活动 -->
+		<div class="sm-act">
+			<p id="p-same">参加活动<a href="{$smarty.const.__CONTROLLER__}/active?user={$user.username}">
+			查看所有</a></p>
+			{foreach $act as $v}
+			<div class="sm-act-all">
+				<p class="act-time">参加时间<span>({$v.ac_time})</span></p>
+				<p class="act-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.ac_cate}">
+				{$v.title}</a></p>	
+				<p class="act-con">{$v.content|truncate:60:"..."}</p>
+			</div>				
+			{/foreach}
+		</div>
+
+		<!-- 我发起过的活动 -->
+		<div class="sm-cre">
+			<p id="p-same">发起活动<a href="{$smarty.const.__CONTROLLER__}/create?user={$user.username}">
+			查看所有</a></p>
+			{foreach $cre as $v}
+			<div class="sm-cre-all">
+				<p class="cre-time">发起时间<span>({$v.shijian})</span></p>
+				<p class="cre-title"><a href="{$smarty.const.__MODULE__}/Content/content?id={$v.ac_cate}">
+				{$v.title}</a></p>	
+				<p class="cre-con">{$v.content|truncate:60:"..."}</p>
+			</div>				
+			{/foreach}
+		</div>
+
+		<!-- 留言板 -->
+		<div class="sm-mes">
+			<p id="p-same">留言板</p>
+			<div class="sm-mes-write">
+				<textarea cols="60" rows="6" id="mess" class="textarea"></textarea>
+				<a href="javascript:void(0)">
+				<input type="button" value="留&nbsp;言" id="sub-mess" class="sub-mess"></a>
+			</div>
+			<div class="sm-mes-new">
+			{foreach $mess as $v}
+			<div class="sm-mes-show">
+				<p class="sm-mess-time">留言时间　{$v.spa_time}</p>
+				<a href="{$smarty.const.__MODULE__}/Space/space?spacename={$v.spa_sender}">
+				<p class="sm-mess-sender">留言者　{$v.spa_sender}</p></a>
+				<p class="sm-mess-cons">{$v.spa_cons}</p>
+			</div>
+			{/foreach}				
+			</div>
+		</div>
+	</div>	
+	<div class="sr">
+		<div class="sr-fri">
+			<p id="p-same">好友</p>
+			{foreach $list as $v}
+			<div class="sr-fri-list">
+				<div class="d-img"><img src="{$smarty.const.SITE_URL}/{$v.favicon}" /></div>
+				<span><a href="{$smarty.const.__CONTROLLER__}/space?spacename={$v.fri_post}">
+				{$v.fri_post}</a></span>		
+			</div>
+			{/foreach}
+			<div id="aa">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+</body>
+</html>

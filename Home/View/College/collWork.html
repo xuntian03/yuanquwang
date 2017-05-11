@@ -1,0 +1,34 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Public/css/coll_com.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/index.js"></script>
+</head>
+<title>园趣校园 -> 校园招聘</title>
+<body>
+
+<!-- 标题栏 -->
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="st">
+		<p class="st-active">园趣校园</p>
+	</div>
+	<div class="sm">
+		{foreach $info as $v}
+		<div class="sm-title">
+			<p>{$v.work_title}</p>
+		</div>
+		<div class="sm-cons">
+			<p>{$v.work_cons}</p>
+		</div>
+		{/foreach}
+	</div>
+
+
+</section>
+
+</body>
+</html>
