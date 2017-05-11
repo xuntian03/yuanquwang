@@ -1,0 +1,24 @@
+
+section {clear:both;width:1000px;margin:60px auto;border:1px solid #ccc;overflow:hidden;}
+
+.sl {float:left;width:176px;height:400px;}
+.sl ul {list-style:none;}
+.sl li {height:50px;line-height:50px;border-bottom:1px solid #ccc;text-align:center;background:#fff;
+		font-size:20px;}
+.sl #li1 {background:#ccc;height:60px;line-height:60px;border-top:1px solid #ccc;}
+.sl a {color:#333}
+.sl a:hover{color:red;}
+
+.sr {float:right;}
+.sr-list {width:820px;height:600px;display:none;border-left:1px solid #ccc;}
+.sr-list-index {border:1px solid #ccc;margin:60px auto;width:400px;list-style:none;}
+.sr-list li {height:60px;line-height:60px;text-align:center;}
+.sr-list p {font-size:20px;border-bottom:1px solid #ccc;}
+.sr-list span {margin-left:20px;}
+.sr #list1 {display:block;}
+
+table {width:820px;border-collapse:collapse;font-size:12px;}
+tr {line-height:40px;text-align:center;}
+#tr0 {background:#0768CA;color:white;font-size:14px;height:59px;border-top:none;}
+td {border:1px solid blue;}
+select {height:24px;width:76px;font-size:14px;font-family:"微软雅黑";}

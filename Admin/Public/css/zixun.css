@@ -1,0 +1,12 @@
+section {width:1000px;height:800px;margin:148px auto;}
+
+.sm {width:1000px;height:300px;overflow:hidden;}
+
+.sm div {float:left;width:300px;height:280px;border:1px solid blue;}
+.sm p {border-bottom:1px solid #666;margin-top:15px;height:40px;line-height:40px;
+		font-size:20px;text-align:center;}
+.sm button {margin:160px 0 0 53px;width:70px;height:32px;line-height:32px;cursor:pointer;
+		font-size:16px;font-family:"微软雅黑"}
+.sm-work {}
+.sm-soci {margin-left:50px;}
+.sm .sm-news {float:right;}

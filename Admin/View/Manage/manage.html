@@ -1,0 +1,47 @@
+<html>
+<head>
+<!-- <meta type="text/html" charset="utf-8"> -->
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/manage.css">
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/manage.js"></script>
+</head>
+<title>管理中心</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<!-- 左边管理导航栏 -->
+	<div class="sl">
+		<div class="sl-nav">
+			<ul>
+				<li id="li1"><a href='javascript:void(0)'>管理中心</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/UserMan/userShow' target='_blank'>用户管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/ActiveMan/activeShow' target='_blank'>活动管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/ActmesMan/actMesShow' target='_blank'>活动留言管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/SpamesMan/spaMesShow' target='_blank'>空间留言管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/SaomaMan/saomaShow' target='_blank'>二维码管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/ZixunMan/zixunShow' target='_blank'>资讯获取</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 右边切换出来的内容显示 -->
+	<div class="sr">		
+		<!-- 管理中心 -->
+		<div class="sr-list" id="list1">
+			<p class="title">
+			</p>
+			<ul class="sr-list-index">
+				<li><p>欢迎登录园趣网后台管理界面</p></li>
+				<li><span>当前管理员：</span><span>{$smarty.session.admin_name}</span></li>
+				{foreach $time as $v}
+				<li><span>上次登录时间：</span><span>{$v}</span></li>
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>

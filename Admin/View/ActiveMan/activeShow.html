@@ -1,0 +1,45 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/common.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/index.js"></script>
+</head>
+<title>管理中心 -- 活动管理</title>
+<body>
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<div class="sm-sou">
+			<form action="{$smarty.const.__SELF__}" method="post">
+				<span>搜索用户名：</span>
+				<input type="text" name="sou_user" class="sou-user">
+				<input type="submit" value="查询" class="sou-sub">
+			</form>
+		</div>
+		<table>
+			<tr id="tr0"><td>序号</td><td>发起人</td><td>标题</td><td>活动日期</td>
+				<td>赞数</td><td>发起时间</td><td>活动类别</td><td>面向区域</td>
+				<td>删除</td><td>修改</td></tr>
+			{foreach $list as $v}
+			<tr><td>{$v.id}</td><td>{$v.founder}</td><td>{$v.title}</td>
+				<!-- <td>{$v.content|truncate:20:"..."}</td> -->
+			<td>{$v.riqi}</td><td>{$v.dianzan}</td><td>{$v.shijian}</td><td>{$v.cate}</td>
+				<td>{$v.region}</td>
+				<td><a href="{$smarty.const.__MODULE__}/ActiveMan/activeDele/id/{$v.id}">删除</a></td>
+				<td><a href="{$smarty.const.__MODULE__}/ActiveMan/activeEdit/id/{$v.id}">修改</a></td>
+			</tr>
+			{/foreach}
+		</table>
+
+		<!-- 显示分页栏 -->
+		{foreach $page_show as $v}
+			{$v}
+		{/foreach}	
+	</div>		
+</section>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/common.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/common.js"></script>
+</head>
+<title>管理中心 -- 用户管理</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<div class="sm-sou">
+			<form action="{$smarty.const.__SELF__}" method="post">
+				<span>查询用户名：</span>
+				<input type="text" name="sou_user" class="sou-user">
+				<input type="submit" value="查询" class="sou-sub">
+			</form>
+		</div>
+		<table>
+			<tr id="tr0"><td>序号</td><td>用户</td><td>积分</td><td>性别</td><td>年份</td>
+				<td>学校</td><td>密码</td><td>年纪</td><td>家乡</td><td>头像</td><td>操作</td>
+			</tr>
+			{foreach $user as $v}
+			<tr><td>{$v.id}</td><td>{$v.username}</td><td>{$v.jifen}</td><td>{$v.gender}</td>
+			<td>{$v.birth}</td><td>{$v.college}</td><td>{$v.password}</td><td>{$v.grade}</td>
+				<td>{$v.home}</td><td><img id="big-img" src="{$smarty.const.SITE_URL}/{$v.favicon}"></td>
+				<td><a href="{$smarty.const.__MODULE__}/UserMan/userEdit/id/{$v.id}">操作</a></td>
+			</tr>
+			{/foreach}
+		</table>
+
+		<!-- 显示分页栏 -->
+		{foreach $page_show as $v}
+			{$v}
+		{/foreach}	
+	</div>		
+</section>
+
+</body>
+</html>

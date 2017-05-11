@@ -1,0 +1,38 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/common.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/manage.js"></script>
+</head>
+<title>管理中心 -- 空间留言管理</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<p class="edit">空间留言管理</p>
+		<table>
+			<tr id="tr0"><td>序号</td><td><select id="sel_spa2">
+				<option value="spa_user">留言者</option>
+				{foreach $spa_user as $v}
+				<option value="{$v.spa_sender}">{$v.spa_sender}</option>
+				{/foreach}
+				</select></td>
+				<td>留言空间</td><td>留言时间</td><td>留言内容</td><td>操作</td>
+			</tr>
+			{foreach $spa_mes as $v}
+			<tr><td>{$v.spa_id}</td><td id="mes_user">{$v.spa_sender}</td>
+				<td>{$v.spa_getter}的空间</td><td>{$v.spa_time}</td>
+				<td>{$v.spa_cons}</td>
+				<td><a href="{$smarty.const.__MODULE__}/SpamesMan/spaMesDele/id/{$v.spa_id}">删除</a></td>
+			</tr>
+			{/foreach}
+		</table>
+	</div>	
+</section>
+
+</body>
+</html>

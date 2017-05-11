@@ -1,0 +1,43 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/common.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/manage.js"></script>
+</head>
+<title>管理中心 -- 活动留言管理</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<p class="edit">活动留言管理</p>
+		<table>
+			<tr id="tr0"><td>序号</td><td><select id="sel_act">
+				<option value="mes_user">留言者</option>
+				{foreach $mes_user as $v}
+				<option value="{$v.mes_user}">{$v.mes_user}</option>
+				{/foreach}
+				</select></td>
+				<td>活动名称</td><td>留言时间</td><td>留言内容</td><td>操作</td>
+			</tr>
+			{foreach $mess as $v}
+			<tr><td>{$v.mes_id}</td><td id="mes_user">{$v.mes_user}</td>
+				<td>{$v.title}</td><td>{$v.mes_time}</td>
+				<td>{$v.mes_cons}</td>
+				<td><a href="{$smarty.const.__MODULE__}/ActmesMan/actMesEdit/mes_user/{$v.mes_user}">操作</a></td>
+			</tr>
+			{/foreach}
+		</table>
+
+		<!-- 显示分页栏 -->
+		{foreach $page_show as $v}
+			{$v}
+		{/foreach}	
+	</div>		
+</section>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/common.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/manage.js"></script>
+</head>
+<title>管理中心 -- 二维码管理</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<p class="edit">二维码管理</p>
+		<table>
+			<tr id="tr0"><td>序号</td><td><select id="sel_sao2">
+				<option value="sao_user">上传者</option>
+				{foreach $sao_user as $v}
+				<option value="{$v.sao_user}">{$v.sao_user}</option>
+				{/foreach}
+				</select></td>
+				<td>二维码</td><td>活动序号</td><td>活动标题</td><td>操作</td>
+			</tr>
+			{foreach $saoma as $v}
+			<tr><td>{$v.sao_id}</td><td id="mes_user">{$v.sao_user}</td>
+				<td><img src="{$smarty.const.SITE_URL}/{$v.sao_dir}" width=60 ></td>
+				<td>{$v.id}</td><td>{$v.title}</td>
+				<td><a href="{$smarty.const.__MODULE__}/SaomaMan/saomaDele/id/{$v.sao_id}">删除</a></td>
+			</tr>
+			{/foreach}
+		</table>
+	</div>		
+</section>
+
+</body>
+</html>

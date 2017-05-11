@@ -1,0 +1,37 @@
+<!DOCtype html>
+<html>
+<head>
+<meta type="text/html" charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/userEditss.css">
+<script type="text/javascript" src="/web/yiqi/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Public/js/index.js"></script>
+</head>
+<title>管理中心 -- 用户管理</title>
+<body>
+
+{include file='../../Common/header.tpl'}
+
+<section>
+	<div class="sm">
+		<p class="edit">编辑用户资料</p>
+		<form action="{$smarty.const.__SELF__}" method="post">
+		<ul>
+			{foreach $info as $user}
+			<li><span>用户名：</span><input type="text" name="user" value="{$user.username}"></li>
+			<li><span>性　别：</span><input type="text" name="gender" value="{$user.gender}"></li>
+			<li><span>出生年月：</span><input type="text" name="birth" value="{$user.birth}"></li>
+			<li><span>所在院校：</span><input type="text" name="college" value="{$user.college}"></li>
+			<li><span>所属年级：</span><input type="text" name="grade" value="{$user.grade}"></li>
+			<li><span>家　乡：</span><input type="text" name="home" value="{$user.home}"></li>
+			<li><span>头像地址：</span><input type="text" name="favicon" value="{$user.favicon}"></li>
+			<li><p class="icon">默认头像地址：Public/img/default-icon.jpg</p></li>
+			<li><a href="{$smarty.const.__MODULE__}/UserMan/userDele/id/{$user.id}">直接删除</a>
+			<input type="submit" name="sub-e" class="sub" value="确定修改"></li>
+			{/foreach}
+		</ul>			
+		</form>
+	</div>		
+</section>
+
+</body>
+</html>

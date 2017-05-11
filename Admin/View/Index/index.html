@@ -1,0 +1,30 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/index.css">
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/index.js"></script>
+</head>
+<title>园趣网后台管理登录</title>
+<body>
+
+<section>
+	<div class="s-title">
+		<p class="s-title-name">园趣网后台管理登录</p>
+	</div>
+	<div class="s-user">
+		<form action="{$smarty.const.__SELF__}" method="post">
+		<ul>
+			<li><span>管理员</span><input type="text" name="name" id="name" placeholder="管理员账号"></li>
+			<li><span>密　码</span><input type="password" name="pwd" placeholder="不少于六位"></li>
+			<li><span>验证码</span><input type="text" name="verify" value="{$ver_err}" id="ver_col" 
+				placeholder="请输入验证码"></li>
+			<li><span class="s-user-verify"><img src="{$smarty.const.__CONTROLLER__}/verifyImg" id="veri"/>
+				</span><a href="javascript:void(0)"><img src="/web/yiqi/Public/img/shuaxin.jpg" id="shuaxin" /></a></li>
+			<li><input type="submit" value="登　录" class="s-user-login"></li>
+		</ul>
+		</form>	
+	</div>
+</section>
+
+</body>
+</html>

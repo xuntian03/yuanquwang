@@ -1,0 +1,157 @@
+<html>
+<head>
+<!-- <meta type="text/html" charset="utf-8"> -->
+<link type="text/css" rel="stylesheet" href="/web/yiqi/Admin/Public/css/manage.css">
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/jquery.js"></script>
+<script type="text/javascript" src="/web/yiqi/Admin/Public/js/manage.js"></script>
+</head>
+<title>管理中心</title>
+<body>
+{include file='../../Common/header.tpl'}
+
+<section>
+	<!-- 左边管理导航栏 -->
+	<div class="sl">
+		<div class="sl-nav">
+			<ul>
+				<li id="li1"><a href='javascript:void(0)'>管理中心</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/UserMan/userShow'>用户管理</a></li>
+				<li><a href='{$smarty.const.__MODULE__}/ActiveMan/activeShow'>活动管理</a></li>
+				<li><a href='javascript:void(0)'>活动留言管理</a></li>
+				<li><a href='javascript:void(0)'>空间留言管理</a></li>
+				<li><a href='javascript:void(0)'>二维码管理</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- 右边切换出来的内容显示 -->
+	<div class="sr">
+		
+		<!-- 管理中心 -->
+		<div class="sr-list" id="list1">
+			<p class="title">
+			</p>
+			<ul class="sr-list-index">
+				<li><p>欢迎登录园趣网后台管理界面</p></li>
+				<li><span>当前管理员：</span><span>{$smarty.session.admin_name}</span></li>
+				{foreach $time as $v}
+				<li><span>上次登录时间：</span><span>{$v}</span></li>
+				{/foreach}
+			</ul>
+		</div>
+
+		<!-- 用户管理 -->
+		<div class="sr-list">
+			<p class="title">
+			</p>
+			<table>
+				<tr id="tr0"><td>序号</td><td>用户</td><td>积分</td><td>性别</td><td>年份</td>
+					<td>学校</td><td>密码</td><td>年纪</td><td>家乡</td><td>头像</td>
+					<td>删除操作</td><td>修改操作</td></tr>
+				{foreach $user as $v}
+				<tr><td>{$v.id}</td><td>{$v.username}</td><td>{$v.jifen}</td><td>{$v.gender}</td>
+				<td>{$v.birth}</td><td>{$v.college}</td><td>{$v.password}</td><td>{$v.grade}</td>
+					<td>{$v.home}</td><td><img src="{$smarty.const.SITE_URL}/{$v.favicon}" width=60px></td>
+					<td><a href="{$smarty.const.__MODULE__}/UserMan/userDele/id/{$v.id}">删除</a></td>
+					<td><a href="{$smarty.const.__MODULE__}/UserMan/userEdit/id/{$v.id}">修改</a></td>
+				</tr>
+				{/foreach}
+			</table>
+		</div>
+
+		<!-- 活动管理 -->
+		<div class="sr-list" id="am">
+			<p class="title">
+			</p>
+			<table>
+				<tr id="tr0"><td>序号</td><td>发起人</td><td>标题</td><td>活动日期</td>
+					<td>赞数</td><td>发起时间</td><td>活动类别</td><td>面向区域</td>
+					<td>删除</td><td>修改</td></tr>
+				{foreach $list as $v}
+				<tr><td>{$v.id}</td><td>{$v.founder}</td><td>{$v.title}</td>
+					<!-- <td>{$v.content|truncate:20:"..."}</td> -->
+				<td>{$v.riqi}</td><td>{$v.dianzan}</td><td>{$v.shijian}</td><td>{$v.cate}</td>
+					<td>{$v.region}</td>
+					<td><a href="{$smarty.const.__MODULE__}/ActiveMan/activeDele/id/{$v.id}">删除</a></td>
+					<td><a href="{$smarty.const.__MODULE__}/ActiveMan/activeEdit/id/{$v.id}">修改</a></td>
+				</tr>
+				{/foreach}
+			</table>
+		</div>
+
+		<!-- 活动留言管理 -->
+		<div class="sr-list" id="amm">
+			<p class="title">
+			</p>
+			<table>
+				<tr id="tr0"><td>序号</td><td><select id="sel_act">
+					<option value="mes_user">留言者</option>
+					{foreach $mes_user as $v}
+					<option value="{$v.mes_user}">{$v.mes_user}</option>
+					{/foreach}
+					</select></td>
+					<td>活动名称</td><td>留言时间</td><td>留言内容</td><td>操作</td>
+				</tr>
+				{foreach $mess as $v}
+				<tr><td>{$v.mes_id}</td><td id="mes_user">{$v.mes_user}</td>
+					<td>{$v.title}</td><td>{$v.mes_time}</td>
+					<td>{$v.mes_cons}</td>
+					<td><a href="{$smarty.const.__MODULE__}/ActmesMan/actMesEdit/mes_user/{$v.mes_user}">操作</a></td>
+				</tr>
+				{/foreach}
+			</table>
+		</div>
+
+		<!-- 空间留言管理 -->
+		<div class="sr-list">
+			<p class="title">
+			</p>
+			<table>
+				<tr id="tr0"><td>序号</td><td><select id="sel_spa">
+					<option value="spa_user">留言者</option>
+					{foreach $spa_user as $v}
+					<option value="{$v.spa_sender}">{$v.spa_sender}</option>
+					{/foreach}
+					</select></td>
+					<td>留言空间</td><td>留言时间</td><td>留言内容</td><td>操作</td>
+				</tr>
+				{foreach $spa_mes as $v}
+				<tr><td>{$v.spa_id}</td><td id="mes_user">{$v.spa_sender}</td>
+					<td>{$v.spa_getter}的空间</td><td>{$v.spa_time}</td>
+					<td>{$v.spa_cons}</td>
+					<td><a href="{$smarty.const.__MODULE__}/SpamesMan/spaMesEdit/spa_user/{$v.spa_sender}">操作</a></td>
+				</tr>
+				{/foreach}
+			</table>
+		</div>
+
+		<!-- 二维码管理 -->
+		<div class="sr-list">
+			<p class="title">
+			</p>
+			<table>
+				<tr id="tr0"><td>序号</td><td><select id="sel_sao">
+					<option value="sao_user">上传者</option>
+					{foreach $sao_user as $v}
+					<option value="{$v.sao_user}">{$v.sao_user}</option>
+					{/foreach}
+					</select></td>
+					<td>二维码</td><td>活动序号</td><td>活动标题</td><td>操作</td>
+				</tr>
+				{foreach $saoma as $v}
+				<tr><td>{$v.sao_id}</td><td id="mes_user">{$v.sao_user}</td>
+					<td><img src="{$smarty.const.SITE_URL}/{$v.sao_dir}" width=60 ></td>
+					<td>{$v.id}</td><td>{$v.title}</td>
+					<td><a href="{$smarty.const.__MODULE__}/SaomaMan/saomaEdit/sao_user/{$v.sao_user}">操作</a></td>
+				</tr>
+				{/foreach}
+			</table>
+		</div>
+
+
+	</div>
+</section>
+
+</body>
+</html>
